@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AppFood</string>
+    <string name="img_comida">Imagem da comida</string>
+    <string name="alimento">Alimento</string>
+</resources>
