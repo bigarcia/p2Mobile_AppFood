@@ -25,16 +25,19 @@ class ListaPresenter (val view : ListaContract.View) : ListaContract.Presenter {
                 view.showMessage("Falha na conexão. Verifique o acesso a internet")
             }
 
-            override fun onResponse(call: Call<FoodList>, response: Response<FoodList>) =
+            override fun onResponse(call: Call<FoodList>, response: Response<FoodList>) {
 //verifica se retorna um FoodList
                 if (response.body() != null) {
                     view.showList(response.body()!!.food)
                 } else {
                     view.showMessage("Sem receita para hoje")
                 }
+            }
         })
     }
+
 }
+
    /* override fun RandomMeal() {
         val foodService = RetrofitInicializer().createFoodService()
         val call = foodService.getRandom()
